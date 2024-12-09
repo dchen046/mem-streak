@@ -4,14 +4,23 @@ import Header from './components/Header'
 
 function App() {
 
-  const [score, setScore] = useState(0);
+  const [scores, setScore] = useState({
+    curr: 0,
+    max: 0,
+  });
+
   const updateScore = () => {
-    setScore(score + 1);
+    let score = scores.curr + 1;
+    if (score > scores.max) {
+      setScore({curr: score, max: score});
+    } else {
+      setScore({...scores, curr: score});
+    }
   }
 
   return ( 
     <>
-      <Header score={score} />
+      <Header scores={scores} />
     </>
   )
 
