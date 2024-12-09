@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
+import Gameboard from './components/Gameboard';
 
 function App() {
 
@@ -18,9 +19,12 @@ function App() {
     }
   }
 
+  const pokemons = ['a','a','a','a','a','a','a','a','a']
+
   return ( 
     <>
       <Header scores={scores} />
+      <Gameboard pokemons={pokemons}/>
     </>
   )
 

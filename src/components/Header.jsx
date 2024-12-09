@@ -1,9 +1,11 @@
-
+import { Col } from "react-bootstrap";
 function Header({ scores }) {
     return (
         <header>
-            <Title title='Poke-Streaks' />
-            <Scores scores={scores} />
+            <Col>
+                <Title title='Poke-Streaks' />
+                <Scores scores={scores} />
+            </Col>
         </header>
     )
 }
