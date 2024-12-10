@@ -14,7 +14,7 @@ function PlayCards({pokemons}) {
     return (
         pokemons.map( (pokemon, index) => {
             console.log(pokemon);
-            return <Pokecard key={index} name={pokemon.name}/> 
+            return <Pokecard key={index} name={pokemon.name} imgSrc={pokemon.sprites.front_default}/> 
         })
     )
 }

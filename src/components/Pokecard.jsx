@@ -1,11 +1,11 @@
 import { Col } from "react-bootstrap";
 
 
-function Pokecard({name}) {
+function Pokecard({name, imgSrc}) {
     return ( 
         <button>
             <Col>
-                <p>Image Here</p>
+                <img src={imgSrc}></img>
                 <p>{name}</p> 
             </Col>
         </button>
