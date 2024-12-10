@@ -19,6 +19,7 @@ function Gameboard({ pokemons, scores, setScore }) {
                 curr: score,
             }));
         }
+        if (score === 9) alert('You Win!');
     }
 
     const [clickedPokemon, setClickedPokemon] = useState([]);
@@ -28,6 +29,7 @@ function Gameboard({ pokemons, scores, setScore }) {
         if (!clickedPokemon.includes(name)) {
             setClickedPokemon(prev => [...prev, name]);
             updateScore();
+            
         } else {
             setScore(prev => ({
                 ...prev,
