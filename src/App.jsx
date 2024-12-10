@@ -9,16 +9,6 @@ function App() {
     curr: 0,
     max: 0,
   });
-
-  const updateScore = () => {
-    let score = scores.curr + 1;
-    if (score > scores.max) {
-      setScore({curr: score, max: score});
-    } else {
-      setScore({...scores, curr: score});
-    }
-  }
-
   const [loading, setLoading] = useState(true);
   const [pokeData, setPokeData] = useState([]);
 
@@ -32,13 +22,13 @@ function App() {
     fetchData();
   }, [loading])
 
-  return ( 
+  return (
     <>
       <Header scores={scores} />
       {loading ? (
-         <p>Loading...</p>
+        <p>Loading...</p>
       ) : (
-        <Gameboard pokemons={pokeData} />           
+        <Gameboard pokemons={pokeData} scores={scores} setScore={setScore} />
       )}
     </>
   )

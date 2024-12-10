@@ -1,13 +1,8 @@
-import { Col } from "react-bootstrap";
-
-
-function Pokecard({name, imgSrc}) {
-    return ( 
-        <button>
-            <Col>
-                <img src={imgSrc}></img>
-                <p>{name}</p> 
-            </Col>
+function Pokecard({ name, imgSrc, handleScore }) {
+    return (
+        <button onClick={handleScore} value={name}>
+            <img src={imgSrc}></img>
+            {name}
         </button>
     )
 }
