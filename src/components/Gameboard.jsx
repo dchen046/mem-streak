@@ -13,7 +13,8 @@ function Gameboard({pokemons}) {
 function PlayCards({pokemons}) {
     return (
         pokemons.map( (pokemon, index) => {
-            return <Pokecard key={index} />
+            console.log(pokemon);
+            return <Pokecard key={index} name={pokemon.name}/> 
         })
     )
 }

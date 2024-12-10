@@ -1,9 +1,13 @@
+import { Col } from "react-bootstrap";
 
 
-function Pokecard() {
+function Pokecard({name}) {
     return ( 
         <button>
-            a
+            <Col>
+                <p>Image Here</p>
+                <p>{name}</p> 
+            </Col>
         </button>
     )
 }
