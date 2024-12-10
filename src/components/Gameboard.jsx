@@ -2,19 +2,19 @@ import { Col } from 'react-bootstrap';
 import '../styles/styles.css'
 import Pokecard from './Pokecard';
 import { useState } from 'react';
+import { shuffle } from '../utils/shuffle';
 
 function Gameboard({ pokemons, scores, setScore }) {
-    
+
     const updateScore = () => {
         let score = scores.curr + 1;
         if (score > scores.max) {
-            setScore( (prev) => ({
-                ...prev,
+            setScore({
                 curr: score,
                 max: score,
-            }));
+            });
         } else {
-            setScore( prev => ({
+            setScore(prev => ({
                 ...prev,
                 curr: score,
             }));
@@ -26,15 +26,17 @@ function Gameboard({ pokemons, scores, setScore }) {
     const updateClickedPokemon = (e) => {
         const name = e.currentTarget.value;
         if (!clickedPokemon.includes(name)) {
-            setClickedPokemon( prev => [...prev, name]);
+            setClickedPokemon(prev => [...prev, name]);
             updateScore();
         } else {
-            setScore( prev => ({
+            setScore(prev => ({
                 ...prev,
                 curr: 0,
             }));
             setClickedPokemon([]);
+            alert("You Lose! Already Clicked This One");
         }
+        shuffle(pokemons);
     }
 
     return (

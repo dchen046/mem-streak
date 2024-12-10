@@ -20,8 +20,8 @@ function Title({ title }) {
 function Scores({ scores }) {
     return (
         <>
-            <p>Score: {scores.curr}</p>
-            <p>Max: {scores.max}</p>
+            <h3>Score: {scores.curr}</h3>
+            <h3>Max: {scores.max}</h3>
         </>
     )
 }
