@@ -20,7 +20,7 @@ function App() {
     }
 
     fetchData();
-  }, [loading])
+  }, []);
 
   return (
     <>
